@@ -1,0 +1,140 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="新ファイル名を指定して実行.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="COMMANDS" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;エイリアス,詳細,補足,コマンド,管理者権限&lt;/string&gt;
+  &lt;string&gt;appwiz.cpl,アプリケーションの追加と削除,,appwiz.cpl,&lt;/string&gt;
+  &lt;string&gt;eventvwr,イベントビューア,,eventvwr,&lt;/string&gt;
+  &lt;string&gt;inetcpl.cpl,インターネットオプション,,inetcpl.cpl,&lt;/string&gt;
+  &lt;string&gt;ciadv.msc,インデックスサービス,,ciadv.msc,&lt;/string&gt;
+  &lt;string&gt;explorer,エクスプローラ,,explorer,&lt;/string&gt;
+  &lt;string&gt;packager,オブジェクトパッケージャ,,packager,&lt;/string&gt;
+  &lt;string&gt;eudcedit,外字エディタ,,eudcedit,&lt;/string&gt;
+  &lt;string&gt;magnify,拡大鏡,,magnify,&lt;/string&gt;
+  &lt;string&gt;desk.cpl,画面のプロパティ,,desk.cpl,&lt;/string&gt;
+  &lt;string&gt;control,コントロールパネル,,control,&lt;/string&gt;
+  &lt;string&gt;control admintools,管理ツール,,control admintools,&lt;/string&gt;
+  &lt;string&gt;control printers,デバイスとプリンタ,,control printers,&lt;/string&gt;
+  &lt;string&gt;control folders,フォルダオプション,,control FOLDERS,&lt;/string&gt;
+  &lt;string&gt;fsmgmt.msc,共有フォルダ,,fsmgmt.msc,&lt;/string&gt;
+  &lt;string&gt;shrpubw,共有フォルダの作成,,shrpubw,&lt;/string&gt;
+  &lt;string&gt;clipbrd,クリップブック,,clipbrd,&lt;/string&gt;
+  &lt;string&gt;gpedit.msc,グループポリシー,,gpedit.msc,&lt;/string&gt;
+  &lt;string&gt;joy.cpl,ゲームコントローラ,,joy.cpl,&lt;/string&gt;
+  &lt;string&gt;mmc,コンソール,,mmc,&lt;/string&gt;
+  &lt;string&gt;compmgmt.msc,コンピュータの管理,,compmgmt.msc,&lt;/string&gt;
+  &lt;string&gt;services.msc,サービス,,services.msc,&lt;/string&gt;
+  &lt;string&gt;mmsys.cpl,サウンドとオーディオデバイスのプロパティ,,mmsys.cpl,&lt;/string&gt;
+  &lt;string&gt;sndrec32,サウンドレコーダー,,sndrec32,&lt;/string&gt;
+  &lt;string&gt;sysedit,システムエディタ,,sysedit,&lt;/string&gt;
+  &lt;string&gt;msconfig,システム構成ユーティリティ,,msconfig,&lt;/string&gt;
+  &lt;string&gt;msinfo32,システム情報,,msinfo32,&lt;/string&gt;
+  &lt;string&gt;sysdm.cpl,システムのプロパティ,,sysdm.cpl,&lt;/string&gt;
+  &lt;string&gt;wuaucpl.cpl,自動更新,,wuaucpl.cpl,&lt;/string&gt;
+  &lt;string&gt;certmgr.msc,証明書,,certmgr.msc,&lt;/string&gt;
+  &lt;string&gt;osk,スクリーンキーボード,,osk,&lt;/string&gt;
+  &lt;string&gt;spider,スパイダ,,spider,&lt;/string&gt;
+  &lt;string&gt;fxscover,送付状エディタ,,fxscover,&lt;/string&gt;
+  &lt;string&gt;sol,ソリティア,,sol,&lt;/string&gt;
+  &lt;string&gt;taskmgr,タスクマネージャ,,taskmgr,&lt;/string&gt;
+  &lt;string&gt;intl.cpl,地域と言語のオプション,,intl.cpl,&lt;/string&gt;
+  &lt;string&gt;winchat,チャット,,winchat,&lt;/string&gt;
+  &lt;string&gt;cleanmgr,ディスククリーンアップ,,cleanmgr,&lt;/string&gt;
+  &lt;string&gt;dfrg.msc,ディスクデフラグツール,,dfrg.msc,&lt;/string&gt;
+  &lt;string&gt;diskmgmt.msc,ディスクの管理,,diskmgmt.msc,&lt;/string&gt;
+  &lt;string&gt;devmgmt.msc,デバイスマネージャ,,devmgmt.msc,&lt;/string&gt;
+  &lt;string&gt;powercfg.cpl,電源オプション,,powercfg.cpl,&lt;/string&gt;
+  &lt;string&gt;calc,電卓,,calc,&lt;/string&gt;
+  &lt;string&gt;telephon.cpl,電話とモデムのオプション,,telephon.cpl,&lt;/string&gt;
+  &lt;string&gt;narrator,ナレータ,,narrator,&lt;/string&gt;
+  &lt;string&gt;ncpa.cpl,ネットワーク接続,,ncpa.cpl,&lt;/string&gt;
+  &lt;string&gt;netsetup.cpl,ネットワークセットアップウィザード,,netsetup.cpl,&lt;/string&gt;
+  &lt;string&gt;mshearts,ハーツ,,mshearts,&lt;/string&gt;
+  &lt;string&gt;hdwwiz.cpl,ハードウェアの追加ウィザード,,hdwwiz.cpl,&lt;/string&gt;
+  &lt;string&gt;perfmon,パフォーマンス,,perfmon,&lt;/string&gt;
+  &lt;string&gt;timedate.cpl,日付と時刻のプロパティ,,timedate.cpl,&lt;/string&gt;
+  &lt;string&gt;pinball,ピンボール,,pinball,&lt;/string&gt;
+  &lt;string&gt;migwiz,ファイルと設定の転送ウィザード,,migwiz,&lt;/string&gt;
+  &lt;string&gt;sigverif,ファイルの署名と確認,,sigverif,&lt;/string&gt;
+  &lt;string&gt;fonts,フォントフォルダ,,fonts,&lt;/string&gt;
+  &lt;string&gt;freecell,フリーセル,,freecell,&lt;/string&gt;
+  &lt;string&gt;appwiz.cpl,プログラムの追加と削除,,appwiz.cpl,&lt;/string&gt;
+  &lt;string&gt;dcomcnfg,分散COMの構成のプロパティ,,dcomcnfg,&lt;/string&gt;
+  &lt;string&gt;mspaint,ペイント,,mspaint,&lt;/string&gt;
+  &lt;string&gt;rsop.msc,ポリシーの結果セット,,rsop.msc,&lt;/string&gt;
+  &lt;string&gt;sndvol32,ボリュームコントロール,,sndvol32,&lt;/string&gt;
+  &lt;string&gt;winmine,マインスイーパ,,winmine,&lt;/string&gt;
+  &lt;string&gt;main.cpl,マウスのプロパティ,,main.cpl,&lt;/string&gt;
+  &lt;string&gt;notepad,メモ帳,,notepad,&lt;/string&gt;
+  &lt;string&gt;charmap,文字コード表,,charmap,&lt;/string&gt;
+  &lt;string&gt;nusrmgr.cpl,ユーザーアカウント,,nusrmgr.cpl,&lt;/string&gt;
+  &lt;string&gt;accwiz,ユーザー補助の設定ウィザード,,accwiz,&lt;/string&gt;
+  &lt;string&gt;utilman,ユーティリティマネージャ,,utilman,&lt;/string&gt;
+  &lt;string&gt;ntmsmgr.msc,リムーバブル記憶領域の管理,,ntmsmgr.msc,&lt;/string&gt;
+  &lt;string&gt;ntmsoprq.msc,リムーバブル記憶領域の操作要求,,ntmsoprq.msc,&lt;/string&gt;
+  &lt;string&gt;mstsc,リモートデスクトップ接続,,mstsc,&lt;/string&gt;
+  &lt;string&gt;regedit,レジストリエディタ,,regedit,&lt;/string&gt;
+  &lt;string&gt;secpol.msc,ローカルセキュリティポリシー,,secpol.msc,&lt;/string&gt;
+  &lt;string&gt;lusrmgr.msc,ローカルユーザとグループ,,lusrmgr.msc,&lt;/string&gt;
+  &lt;string&gt;logoff,ログオフ,,logoff,&lt;/string&gt;
+  &lt;string&gt;wordpad,ワードパット,,wordpad,&lt;/string&gt;
+  &lt;string&gt;drwatson,ワトソン博士,,drwatson,&lt;/string&gt;
+  &lt;string&gt;msaccess,Access,,msaccess,&lt;/string&gt;
+  &lt;string&gt;ddeshare,DDE共有,,ddeshare,&lt;/string&gt;
+  &lt;string&gt;dxdiag,Direct X診断ツール,,dxdiag,&lt;/string&gt;
+  &lt;string&gt;verifier,Driver Verifier Manager（システム内のドライバ分析）,,verifier,&lt;/string&gt;
+  &lt;string&gt;excel,Excel,,excel,&lt;/string&gt;
+  &lt;string&gt;iexpress,IExpress（自己解凍書庫作成）,,iexpress,&lt;/string&gt;
+  &lt;string&gt;iexplorer,Internet Explorer,,iexplorer,&lt;/string&gt;
+  &lt;string&gt;wupdmgr,Microsoft Update,,wupdmgr,&lt;/string&gt;
+  &lt;string&gt;mrt,Microsoft Windows　悪意のあるソフトウェアの削除ツール,,mrt,&lt;/string&gt;
+  &lt;string&gt;nslookup,nslookup,,nslookup,&lt;/string&gt;
+  &lt;string&gt;odbcad32,ODBCデータソースアドミニストレータ,,odbcad32,&lt;/string&gt;
+  &lt;string&gt;outlook,Outlook,,outlook,&lt;/string&gt;
+  &lt;string&gt;powerpnt,PowerPoint,,powerpnt,&lt;/string&gt;
+  &lt;string&gt;telnet,Telnet,,telnet,&lt;/string&gt;
+  &lt;string&gt;visio32,Visio,,visio32,&lt;/string&gt;
+  &lt;string&gt;wmplayer,Windows Media Player,,wmplayer,&lt;/string&gt;
+  &lt;string&gt;wscript,Windows Script Hostの設定,,wscript,&lt;/string&gt;
+  &lt;string&gt;syskey,Windows XPアカウントデータベースのセキュリティ保護,,syskey,&lt;/string&gt;
+  &lt;string&gt;wscui.msc,Windowsセキュリティセンター,,wscui.msc,&lt;/string&gt;
+  &lt;string&gt;winver,Windowsバージョン情報,,winver,&lt;/string&gt;
+  &lt;string&gt;firewall.cpl,Windowsファイアウォール,,firewall.cpl,&lt;/string&gt;
+  &lt;string&gt;wmimgmt.msc,WMI,,wmimgmt.msc,&lt;/string&gt;
+  &lt;string&gt;winword,Word,,winword,&lt;/string&gt;
+  &lt;string&gt;shell:Startup,ユーザーのスタートアップ,\Microsoft\Windows\Start Menu\Programs\Startup,shell:Startup,&lt;/string&gt;
+  &lt;string&gt;shell:Start Menu,ユーザーのスタートメニュー,【ホットキ-】\Microsoft\Windows\Start Menu,shell:Start Menu,&lt;/string&gt;
+  &lt;string&gt;shell:Programs,プログラムフォルダ,,shell:Programs,&lt;/string&gt;
+  &lt;string&gt;shell:Downloads,ダウンロードフォルダ,,shell:Downloads,&lt;/string&gt;
+  &lt;string&gt;cmd /k ipconfig,コマンドプロンプト,,cmd /k ipconfig,&lt;/string&gt;
+  &lt;string&gt;cmd,コマンドプロンプト,,cmd,&lt;/string&gt;
+  &lt;string&gt;ms-settings:windowsupdate,WindowsUpdate,,ms-settings:windowsupdate,&lt;/string&gt;
+  &lt;string&gt;ms-settings:powersleep,電源とスリープ,,ms-settings:powersleep,&lt;/string&gt;
+  &lt;string&gt;ms-settings:display,ディスプレイ,,ms-settings:display,&lt;/string&gt;
+  &lt;string&gt;ms-settings:printers,プリンターとスキャナ,,ms-settings:printers,&lt;/string&gt;
+  &lt;string&gt;hosts,ホストファイル編集,,notepad C:\Windows\System32\drivers\etc\hosts,&lt;/string&gt;
+  &lt;string&gt;share,共有フォルダ,,D:\95_share,&lt;/string&gt;
+  &lt;string&gt;work,ワークフォルダ,,D:\96_work,&lt;/string&gt;
+  &lt;string&gt;tool,ツールフォルダ,,D:\97_tool,&lt;/string&gt;
+  &lt;string&gt;printscreen,キャプチャフォルダ,,D:\98_printscreen,&lt;/string&gt;
+  &lt;string&gt;my,ショートカットキーフォルダ,,D:\99_my,&lt;/string&gt;
+  &lt;string&gt;environment,環境変数,,rundll32.exe sysdm.cpl EditEnvironmentVariables,&lt;/string&gt;
+  &lt;string&gt;kinou,機能の有効化または無効化,,OptionalFeatures.exe,&lt;/string&gt;
+  &lt;string&gt;UAC,ユーザー制御,,UserAccountControlSettings.exe,&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="kidoSetting" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="displaySetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">左上</Value>
+    </Setting>
+    <Setting Name="DBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)" />
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,141 @@
+namespace 新ファイル名を指定して実行.Migrations
+{
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+    using 新ファイル名を指定して実行.Model;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<新ファイル名を指定して実行.Model.CommandDbContext>
+    {
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = false;
+        }
+
+        protected override void Seed(新ファイル名を指定して実行.Model.CommandDbContext context)
+        {
+            context.Commands.AddOrUpdate(p => p.command
+                   //, new Command("エイリアス", "コマンド", "詳細", "補足", 0, DateTime.Now, DateTime.Now)
+                   , new Command("appwiz.cpl", "appwiz.cpl", "アプリケーションの追加と削除", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("eventvwr", "eventvwr", "イベントビューア", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("inetcpl.cpl", "inetcpl.cpl", "インターネットオプション", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("explorer", "explorer", "エクスプローラ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("packager", "packager", "オブジェクトパッケージャ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("eudcedit", "eudcedit", "外字エディタ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("magnify", "magnify", "拡大鏡", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("desk.cpl", "desk.cpl", "画面のプロパティ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("control", "control", "コントロールパネル", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("control admintools", "control admintools", "管理ツール", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("control printers", "control printers", "デバイスとプリンタ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("control folders", "control FOLDERS", "フォルダオプション", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("fsmgmt.msc", "fsmgmt.msc", "共有フォルダ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("shrpubw", "shrpubw", "共有フォルダの作成", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("gpedit.msc", "gpedit.msc", "グループポリシー", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("joy.cpl", "joy.cpl", "ゲームコントローラ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("mmc", "mmc", "コンソール", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("compmgmt.msc", "compmgmt.msc", "コンピュータの管理", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("services.msc", "services.msc", "サービス", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("mmsys.cpl", "mmsys.cpl", "サウンドとオーディオデバイスのプロパティ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("sndrec32", "sndrec32", "サウンドレコーダー", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("sysedit", "sysedit", "システムエディタ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("msconfig", "msconfig", "システム構成ユーティリティ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("msinfo32", "msinfo32", "システム情報", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("sysdm.cpl", "sysdm.cpl", "システムのプロパティ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("certmgr.msc", "certmgr.msc", "証明書", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("osk", "osk", "スクリーンキーボード", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("spider", "spider", "スパイダ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("fxscover", "fxscover", "送付状エディタ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("taskmgr", "taskmgr", "タスクマネージャ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("intl.cpl", "intl.cpl", "地域と言語のオプション", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("winchat", "winchat", "チャット", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("cleanmgr", "cleanmgr", "ディスククリーンアップ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("dfrg.msc", "dfrg.msc", "ディスクデフラグツール", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("diskmgmt.msc", "diskmgmt.msc", "ディスクの管理", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("devmgmt.msc", "devmgmt.msc", "デバイスマネージャ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("powercfg.cpl", "powercfg.cpl", "電源オプション", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("calc", "calc", "電卓", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("narrator", "narrator", "ナレータ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("ncpa.cpl", "ncpa.cpl", "ネットワーク接続", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("netsetup.cpl", "netsetup.cpl", "ネットワークセットアップウィザード", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("mshearts", "mshearts", "ハーツ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("hdwwiz.cpl", "hdwwiz.cpl", "ハードウェアの追加ウィザード", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("timedate.cpl", "timedate.cpl", "日付と時刻のプロパティ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("migwiz", "migwiz", "ファイルと設定の転送ウィザード", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("sigverif", "sigverif", "ファイルの署名と確認", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("fonts", "fonts", "フォントフォルダ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("appwiz.cpl", "appwiz.cpl", "プログラムの追加と削除", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("dcomcnfg", "dcomcnfg", "分散COMの構成のプロパティ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("mspaint", "mspaint", "ペイント", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("rsop.msc", "rsop.msc", "ポリシーの結果セット", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("sndvol32", "sndvol32", "ボリュームコントロール", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("main.cpl", "main.cpl", "マウスのプロパティ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("notepad", "notepad", "メモ帳", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("charmap", "charmap", "文字コード表", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("nusrmgr.cpl", "nusrmgr.cpl", "ユーザーアカウント", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("accwiz", "accwiz", "ユーザー補助の設定ウィザード", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("utilman", "utilman", "ユーティリティマネージャ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("ntmsmgr.msc", "ntmsmgr.msc", "リムーバブル記憶領域の管理", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("ntmsoprq.msc", "ntmsoprq.msc", "リムーバブル記憶領域の操作要求", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("mstsc", "mstsc", "リモートデスクトップ接続", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("regedit", "regedit", "レジストリエディタ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("secpol.msc", "secpol.msc", "ローカルセキュリティポリシー", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("lusrmgr.msc", "lusrmgr.msc", "ローカルユーザ・ﾆグループ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("wordpad", "wordpad", "ワードパット", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("msaccess", "msaccess", "Access", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("ddeshare", "ddeshare", "DDE共有", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("dxdiag", "dxdiag", "Direct X診断ツール", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("verifier", "verifier", "Driver Verifier Manager（システム内のドライバ分析）", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("excel", "excel", "Excel", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("iexpress", "iexpress", "IExpress（自己解凍書庫作成）", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("iexplorer", "iexplorer", "Internet Explorer", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("mrt", "mrt", "Microsoft Windows　悪意のあるソフトウェアの削除ツール", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("nslookup", "nslookup", "nslookup", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("odbcad32", "odbcad32", "ODBCデータソースアドミニストレータ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("outlook", "outlook", "Outlook", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("powerpnt", "powerpnt", "PowerPoint", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("telnet", "telnet", "Telnet", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("visio32", "visio32", "Visio", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("wmplayer", "wmplayer", "Windows Media Player", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("wscript", "wscript", "Windows Script Hostの設定", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("syskey", "syskey", "Windows XPアカウントデータベースのセキュリティ保護", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("wscui.msc", "wscui.msc", "Windowsセキュリティセンター", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("winver", "winver", "Windowsバージョン情報", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("firewall1", "firewall.cpl", "Windowsファイアウォール", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("firewall2", "wf.msc", "Windowsファイアウォール(詳細)", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("wmimgmt.msc", "wmimgmt.msc", "WMI", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("winword", "winword", "Word", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("perfmon", "perfmon", "パフォーマンス", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("perfmon", "perfmon /report", "システム診断実行", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("perfmon", "perfmon /rel", "システム診断", "", 0, DateTime.Now, DateTime.Now)
+
+                   , new Command("shell:Startup", "shell:Startup", "ユーザーのスタートアップ", @"\Microsoft\Windows\Start Menu\Programs\Startup", 0, DateTime.Now, DateTime.Now)
+                   , new Command("shell:Start Menu", "shell:Start Menu", "ユーザーのスタートメニュー", @"【ホットキ-】\Microsoft\Windows\Start Menu", 0, DateTime.Now, DateTime.Now)
+                   , new Command("shell:Programs", "shell:Programs", "プログラムフォルダ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("shell:Downloads", "shell:Downloads", "ダウンロードフォルダ", "", 0, DateTime.Now, DateTime.Now)
+
+                   , new Command("ms-settings:windowsupdate", "ms-settings:windowsupdate", "WindowsUpdate", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("ms-settings:powersleep", "ms-settings:powersleep", "電源とスリープ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("ms-settings:display", "ms-settings:display", "ディスプレイ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("ms-settings:printers", "ms-settings:printers", "プリンターとスキャナ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("hosts", @"notepad C:\Windows\System32\drivers\etc\hosts", "ホストファイル編集", "", 0, DateTime.Now, DateTime.Now)
+
+                   , new Command("env", "rundll32.exe sysdm.cpl EditEnvironmentVariables", "環境変数", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("kinou", "OptionalFeatures.exe", "機能の有効化または無効化", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("uac", "UserAccountControlSettings.exe", "ユーザー制御", "", 0, DateTime.Now, DateTime.Now)
+
+                   //表示候補
+                   , new Command("cmd /k ipconfig", "cmd /k ipconfig", "コマンドプロンプト", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("cmd /k netsh wlan show interface", "cmd /k netsh wlan show interface", "接続無線情報", "", 0, DateTime.Now, DateTime.Now)
+
+                   , new Command("cmd", "cmd", "コマンドプロンプト", "", 0, DateTime.Now, DateTime.Now)
+
+                   , new Command("share", @"D:\95_share", "共有フォルダ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("work", @"D:\96_work", "ワークフォルダ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("tool", @"D:\97_tool", "ツールフォルダ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("printscreen", @"D:\98_printscreen", "キャプチャフォルダ", "", 0, DateTime.Now, DateTime.Now)
+                   , new Command("my", @"D:\99_my", "ショートカットキーフォルダ", "", 0, DateTime.Now, DateTime.Now)
+               );
+        }
+    }
+}

@@ -132,9 +132,5 @@
     <Setting Name="displaySetting" Type="System.String" Scope="User">
       <Value Profile="(Default)">左上</Value>
     </Setting>
-    <Setting Name="DBConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)" />
-      <Value Profile="(Default)" />
-    </Setting>
   </Settings>
 </SettingsFile>

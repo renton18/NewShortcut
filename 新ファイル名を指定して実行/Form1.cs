@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using 新ファイル名を指定して実行.Model;
 
 namespace 新ファイル名を指定して実行
 {
     public partial class Form1 : Form
     {
         //フォーム移動用
-        [DllImport("user32.dll")]extern static int MoveWindow(IntPtr hwnd, int x, int y, int nWidth, int nHeight, int bRepaint);
+        [DllImport("user32.dll")] extern static int MoveWindow(IntPtr hwnd, int x, int y, int nWidth, int nHeight, int bRepaint);
 
         List<string> aliass = new List<string>();
         List<string> details1 = new List<string>();
@@ -31,6 +27,15 @@ namespace 新ファイル名を指定して実行
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //foreach (var items in Properties.Settings.Default.COMMANDS)
+            //{
+            //    var item = items.Split(',');
+            //    //, new Command("cmd", "cmd", "コマンドプロンプト", "コマンドプロンプト", 0, DateTime.Now, DateTime.Now)
+            //    Console.WriteLine(@",new Command(""" + item[0] + @""",""" + item[3] + @""",""" + item[1] + @""",""" + item[2]
+            //           + @""",0, DateTime.Now, DateTime.Now)");
+            //}
+
+
             //フォーム表示設定
             this.Height = 150;
             this.Width = 400;
@@ -46,23 +51,22 @@ namespace 新ファイル名を指定して実行
                 default: break;
             }
 
-            //コンボボックス サジェスト設定
-            comboBoxMain.Focus();
-            AutoCompleteStringCollection sAutoList = new AutoCompleteStringCollection();
-            comboBoxMain.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBoxMain.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            comboBoxMain.AutoCompleteCustomSource = sAutoList;
-            //コンボボックス サジェストコマンド登録
-            StringCollection commandlist = Properties.Settings.Default.COMMANDS;
-            foreach (String command in commandlist)
+            //コマンド一覧表示
+            List<Command> commandList;
+            using (CommandDbContext db = new CommandDbContext())
             {
-                String[] items = command.Split(',');
-                aliass.Add(items[0]);
-                details1.Add(items[1]);
-                details2.Add(items[2]);
-                commands.Add(items[3]);
-                sAutoList.Add(items[0] + "       [" + items[1] + " ]");
+                commandList = db.Commands.ToList();
             }
+            dataGridView1.DataSource = commandList;
+
+            //コンボボックス サジェスト設定
+            mainCb.Focus();
+            AutoCompleteStringCollection sAutoList = new AutoCompleteStringCollection();
+            mainCb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            mainCb.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            mainCb.AutoCompleteCustomSource = sAutoList;
+            //コンボボックス サジェストコマンド登録
+            commandList.ToList().ForEach(c => sAutoList.Add(c.alias));
         }
 
         /// <summary>
@@ -72,36 +76,31 @@ namespace 新ファイル名を指定して実行
         /// <param name="e"></param>
         private void comboBoxMain_KeyDown(object sender, KeyEventArgs e)
         {
+            //ENTER押下
             if (e.KeyValue == (char)Keys.Enter)
             {
-                int currentCount =
-                 aliass.IndexOf(comboBoxMain.Text.Split(new String[] { "[" }, StringSplitOptions.None)[0].Trim());
-                String currentArg = "";
-                String currentCommand = "";
-                if (currentCount != -1)
+                Command currentCommand;
+                using (CommandDbContext db = new CommandDbContext())
                 {
-                    currentCommand = commands[currentCount];
-                }
-                else
-                {
-                    currentCommand = comboBoxMain.Text.Split(new String[] { "[" }, StringSplitOptions.None)[0].Trim();
+                    currentCommand = db.Commands.Single(c => c.alias == mainCb.Text.Trim());
                 }
 
-                if (currentCommand.IndexOf(" ") != -1)
+                string command = currentCommand.command;
+                string currentArg = "";
+
+                //スペースがあるコマンドの場合
+                if (command.Contains(" "))
                 {
-                    //shell:で始まるもの抜ける
-                    if (currentCommand.IndexOf("shell:") == -1)
+                    //shell:で始まるもの
+                    if (!command.Contains("shell:"))
                     {
-                        if (currentCommand.IndexOf("control") == -1)
-                        {
-                            currentArg = currentCommand.Substring(currentCommand.IndexOf(" "), currentCommand.Length - currentCommand.IndexOf(" ")).Trim();
-                            currentCommand = currentCommand.Substring(0, currentCommand.IndexOf(" ")).Trim();
-                        }
+                        currentArg = command.Substring(command.IndexOf(" "), command.Length - command.IndexOf(" ")).Trim();
+                        command = command.Substring(0, command.IndexOf(" ")).Trim();
                     }
                 }
 
                 Process p = new Process();
-                p.StartInfo.FileName = currentCommand;          // コマンド名
+                p.StartInfo.FileName = command;          // コマンド名
                 if (currentArg != "") { p.StartInfo.Arguments = currentArg; }         // 引数有の場合
                 if (e.Shift && e.Control) { p.StartInfo.Verb = "RunAs"; }         // CTRL + Shiftが押されたら管理者権限実行
                 //p.StartInfo.CreateNoWindow = true;            // DOSプロンプトの黒い画面を非表示
@@ -129,24 +128,10 @@ namespace 新ファイル名を指定して実行
                         this.Dispose();
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("コマンドありません");
+                    MessageBox.Show(ex.Message);
                 }
-            }
-        }
-
-        private void comboBoxMain_TextUpdate(object sender, EventArgs e)
-        {
-            int currentCount =
-                 aliass.IndexOf(comboBoxMain.Text.Split(new String[] { "[" }, StringSplitOptions.None)[0].Trim());
-            if (currentCount != -1)
-            {
-                labelDetailInformation.Text = details2[currentCount];
-            }
-            else
-            {
-                labelDetailInformation.Text = "";
             }
         }
 
@@ -155,8 +140,12 @@ namespace 新ファイル名を指定して実行
             //設定モード F1
             if (e.KeyCode == Keys.F1)
             {
-                if (this.Height == 150) { this.Height = 500; this.Width = 800; }
-                else if (this.Height == 500) { this.Height = 150; this.Width = 400; }
+                if (this.Height == 150) { this.WindowState = FormWindowState.Maximized; }
+                else
+                {
+                    this.WindowState = FormWindowState.Normal;
+                    this.Height = 150; this.Width = 400;
+                }
 
                 //フォーム位置
                 switch (comboBoxDisplay.Text)
@@ -171,8 +160,8 @@ namespace 新ファイル名を指定して実行
             {
                 //this.Text = this.Text + "  【管理者権限】";
                 //反転表示された文字列を批反転状態に戻す
-                comboBoxMain.SelectionStart = comboBoxMain.Text.Length;
-                comboBoxMain.ForeColor = Color.Brown;
+                mainCb.SelectionStart = mainCb.Text.Length;
+                mainCb.ForeColor = Color.Red;
             }
         }
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -180,7 +169,7 @@ namespace 新ファイル名を指定して実行
             if (e.Shift || e.Control)
             {
                 //this.Text = this.Text.Replace("  【管理者権限】", "");
-                comboBoxMain.ForeColor = Color.Black;
+                mainCb.ForeColor = Color.Black;
             }
         }
 
@@ -193,6 +182,42 @@ namespace 新ファイル名を指定して実行
         {
             Properties.Settings.Default.displaySetting = comboBoxDisplay.Text;
             Properties.Settings.Default.Save();
+        }
+
+        private void commandSearchTb_TextChanged(object sender, EventArgs e)
+        {
+            var keyword = commandSearchTb.Text.Trim();
+            using (CommandDbContext db = new CommandDbContext())
+            {
+                dataGridView1.DataSource = db.Commands.Where(s => s.command.StartsWith(keyword)).ToList();
+            }
+        }
+
+        private void commandNameSearchTb_TextChanged(object sender, EventArgs e)
+        {
+            var keyword = commandNameSearchTb.Text.Trim();
+            using (CommandDbContext db = new CommandDbContext())
+            {
+                dataGridView1.DataSource = db.Commands.Where(s => s.commandName.StartsWith(keyword)).ToList();
+            }
+        }
+
+        private void mainCb_KeyUp(object sender, KeyEventArgs e)
+        {
+            using (CommandDbContext db = new CommandDbContext())
+            {
+                try
+                {
+                    Command command = db.Commands.FirstOrDefault(c => c.alias == mainCb.Text.Trim());
+                    if (command != null)
+                    {
+                        statusLb.Text = command.command + Environment.NewLine + command.commandName;
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
         }
     }
 }
